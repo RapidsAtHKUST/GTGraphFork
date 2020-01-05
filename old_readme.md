@@ -1,4 +1,4 @@
-
+```cpp
 /* 
  * GTgraph: A suite of synthetic graph generators
  * Copyright (C) 2006  Kamesh Madduri, David A. Bader 
@@ -32,11 +32,11 @@
  *                      Atlanta, GA 30332
  *
  */
+```
 
-
- *******
-  About 
- *******
+>*******
+>  About 
+> *******
   
   This package contains three synthetic graph generators:
   
@@ -57,9 +57,9 @@
      and small-world characteristics, we apply the Recursive Matrix
      (R-MAT) graph model discussed in [1].  
 
- *****************
-  Getting Started		 
- *****************
+>*****************
+>  Getting Started		 
+> *****************
 
  a) Set the following variables in Makefile.var
     i.  CC      - the C compiler
@@ -99,21 +99,21 @@
 	  plain text DIMACS graph format. So please make sure that you
 	  have sufficient system resources before this run.
 
- *******
-  Usage
- *******
+> *******
+>  Usage
+> *******
  
-  SSCA2
- *******
+>  SSCA2
+> *******
  
  % GTgraph-ssca2 [-options]
 	-s ###  SCALE value (integer) to use (default -- 20)
-        -c ###  config file to use
-        -o ###  output file to write the graph to (default -- sample.gr)
+    -c ###  config file to use
+    -o ###  output file to write the graph to (default -- sample.gr)
 	-h      display this message
 
-  random
- ********
+>  random
+> ********
 
  % GTgraph-random [-options]
         -c ###  config file to use
@@ -126,12 +126,12 @@
         -o ###  output file to write the graph to
         -h      display this message
 
-  R-MAT
- *******
+>  R-MAT
+> *******
 
  % GTgraph-rmat [-options]
 	-c  ###	 config file to use
-        -n  ###  no. of vertices (default -- 10^7)
+    -n  ###  no. of vertices (default -- 10^7)
 	-m  ###	 no. of edges (default -- 10^8)
 	-o  ###  output file to write the graph to
 	-h       display this message
@@ -143,9 +143,10 @@
  without any arguments, the default input parameters 
  specified in init.c are assumed.
 
-   References
-  ************
-  
+## References
+
+``````  
   [1] D. Chakrabarti, Y. Zhan and C. Faloutsos, R-MAT: A Recursive
       Model for Graph Mining, Proc. SIAM Intl. Conf. on Data Mining, 2004
+************
 

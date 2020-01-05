@@ -6,5 +6,4 @@ build
 GTgraph-rmat
 GTgraph-ssca2
 GTgraph-random
-log
 *.a
