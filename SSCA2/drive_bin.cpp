@@ -28,12 +28,17 @@ void writeToBinFile(graph *g) {
         // mmap here.
         auto write_buf = (pair<int32_t, int32_t> *) mmap(nullptr, file_size,
                                                          PROT_READ | PROT_WRITE, MAP_SHARED, tmp_file_fd, 0);
-#pragma omp parallel for
+
+        int64_t max_node_id = -1;
+#pragma omp parallel for reduction(max:max_node_id)
         for (i = 0; i < g->m; i++) {
+            max_node_id = max<int64_t>(g->start[i] + 1, max_node_id);
+            max_node_id = max<int64_t>(g->end[i] + 1, max_node_id);
             write_buf[i].first = g->start[i] + 1;
             write_buf[i].second = g->end[i] + 1;
         }
         auto ret = munmap(write_buf, file_size);
+        log_info("Max ID: %lld", max_node_id);
         log_info("After Munmap, success code: %d", ret);
         close(tmp_file_fd);
     }
