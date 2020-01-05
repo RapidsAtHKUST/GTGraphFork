@@ -1,4 +1,8 @@
+*.gr
 *.o
+.idea
+cmake-build-debug
+build
 GTgraph-rmat
 GTgraph-ssca2
 GTgraph-random
