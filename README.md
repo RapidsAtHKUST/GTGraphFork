@@ -1,7 +1,8 @@
 ## Info
 
-* Link: http://www.cse.psu.edu/~kxm85/software/GTgraph/ 
-* By default, compile with `gcc`, see [Makefile.var](Makefile.var)
+* Original Link: http://www.cse.psu.edu/~kxm85/software/GTgraph/ 
+* By default, the makefile random number generator project [sprng2.0-lite](sprng2.0-lite) is compiled with `gcc`, see [Makefile.var](Makefile.var)
+* In this work, we support cmake-build system and add support to get binary edge list as outputs, see the later Usages. 
 
 ## Build
 
