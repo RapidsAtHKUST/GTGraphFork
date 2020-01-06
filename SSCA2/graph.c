@@ -227,6 +227,7 @@ void graphGen(graph* g)
 		permV[i] = i;
 	}
 
+#ifndef DISABLE_REAL_PERMUATE
 	/* Permute the vertices and store them in permV */
 	for (i=0; i<TotVertices; i++) {
 
@@ -239,6 +240,7 @@ void graphGen(graph* g)
 		}
 	
 	}
+#endif
 
 	for (i=0; i<numEdges; i++) {
 		startVertex[i] = permV[startV[i]];

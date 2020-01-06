@@ -62,6 +62,11 @@ add_executable(GTgraph-ssca2 SSCA2/drive.c)
 target_link_libraries(GTgraph-ssca2 PRIVATE ${SSCA_CORE})
 add_executable(GTgraph-ssca2-bin SSCA2/drive_bin.cpp)
 target_link_libraries(GTgraph-ssca2-bin PRIVATE ${SSCA_CORE})
+
+add_executable(GTgraph-ssca2-with-locality-bin SSCA2/globals.c SSCA2/graph.c SSCA2/init.c SSCA2/utils.c SSCA2/drive_bin.cpp)
+add_dependencies(GTgraph-ssca2-with-locality-bin sprng)
+target_compile_definitions(GTgraph-ssca2-with-locality-bin PRIVATE DISABLE_REAL_PERMUATE=1)
+target_link_libraries(GTgraph-ssca2-with-locality-bin PRIVATE ${SPRNG_LIB})
 ###############################################33
 
 ### 2nd: random graph (ER model)
@@ -92,8 +97,10 @@ target_link_libraries(GTgraph-rmat-bin PRIVATE ${RMAT_CORE})
 
 ## make-install
 install(TARGETS
+        GTgraph-ssca2-with-locality-bin
         GTgraph-ssca2-bin GTgraph-random-bin GTgraph-rmat-bin
         #        GTgraph-ssca2 GTgraph-random GTgraph-rmat
+        RUNTIME DESTINATION .
         RUNTIME DESTINATION .
         RUNTIME DESTINATION .
         RUNTIME DESTINATION .
