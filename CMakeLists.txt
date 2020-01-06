@@ -93,12 +93,30 @@ target_link_libraries(GTgraph-rmat-bin PRIVATE ${RMAT_CORE})
 ## make-install
 install(TARGETS
         GTgraph-ssca2-bin GTgraph-random-bin GTgraph-rmat-bin
-#        GTgraph-ssca2 GTgraph-random GTgraph-rmat
+        #        GTgraph-ssca2 GTgraph-random GTgraph-rmat
         RUNTIME DESTINATION .
         RUNTIME DESTINATION .
         RUNTIME DESTINATION .
-#        RUNTIME DESTINATION .
-#        RUNTIME DESTINATION .
-#        RUNTIME DESTINATION .
+        #        RUNTIME DESTINATION .
+        #        RUNTIME DESTINATION .
+        #        RUNTIME DESTINATION .
         )
 
+# install config files
+add_custom_command(TARGET GTgraph-ssca2-bin POST_BUILD
+        COMMAND mkdir -p ${CMAKE_INSTALL_PREFIX}/configurations
+        COMMAND cp ${CMAKE_SOURCE_DIR}/SSCA2/config ${CMAKE_INSTALL_PREFIX}/configurations/ssca2-config
+        COMMAND cp ${CMAKE_SOURCE_DIR}/SSCA2/config ${CMAKE_INSTALL_PREFIX}/configurations/ssca2-config-template
+        )
+
+add_custom_command(TARGET GTgraph-random-bin POST_BUILD
+        COMMAND mkdir -p ${CMAKE_INSTALL_PREFIX}/configurations
+        COMMAND cp ${CMAKE_SOURCE_DIR}/random/config ${CMAKE_INSTALL_PREFIX}/configurations/random-config
+        COMMAND cp ${CMAKE_SOURCE_DIR}/random/config ${CMAKE_INSTALL_PREFIX}/configurations/random-config-template
+        )
+
+add_custom_command(TARGET GTgraph-ssca2-bin POST_BUILD
+        COMMAND mkdir -p ${CMAKE_INSTALL_PREFIX}/configurations
+        COMMAND cp ${CMAKE_SOURCE_DIR}/R-MAT/config ${CMAKE_INSTALL_PREFIX}/configurations/rmat-config
+        COMMAND cp ${CMAKE_SOURCE_DIR}/R-MAT/config ${CMAKE_INSTALL_PREFIX}/configurations/rmat-config-template
+        )
