@@ -89,3 +89,16 @@ target_link_libraries(GTgraph-rmat PRIVATE ${RMAT_CORE})
 add_executable(GTgraph-rmat-bin R-MAT/drive_bin.cpp)
 target_link_libraries(GTgraph-rmat-bin PRIVATE ${RMAT_CORE})
 #############################
+
+## make-install
+install(TARGETS
+        GTgraph-ssca2-bin GTgraph-random-bin GTgraph-rmat-bin
+#        GTgraph-ssca2 GTgraph-random GTgraph-rmat
+        RUNTIME DESTINATION .
+        RUNTIME DESTINATION .
+        RUNTIME DESTINATION .
+#        RUNTIME DESTINATION .
+#        RUNTIME DESTINATION .
+#        RUNTIME DESTINATION .
+        )
+

@@ -8,9 +8,12 @@
 ## Build
 
 ```
-mkdir build & cd build
-cmake ..
+rm -rf ~/build-tmp
+mkdir -p ~/build-tmp 
+cd ~/build-tmp
+cmake -H~/workspace/yche/git-repos/GTGraphFork -B~/build-tmp -DCMAKE_INSTALL_PREFIX=~/yche-bin
 make -j
+make install
 ```
 
 ## Cmake-Build
